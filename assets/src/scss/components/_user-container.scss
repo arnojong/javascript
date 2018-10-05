@@ -17,15 +17,15 @@
 
     &__utility {
         list-style: none;
-        border-radius: 3px;
         flex-grow: 1;
         padding: $gutter;
         width: p(1, 3);
+    }
 
-        &:not(:last-child) {
-            margin-right: 10px;   
-        }
-
+    &__utility-inner {
+        background: white;
+        border-radius: 3px;
+        padding: 8px;
     }
     
 }

@@ -13,6 +13,11 @@ input {
 
 // User form
 .user-form {
+
+    &__container {
+        background: $grey;
+        padding: 50px;
+    }
     
     &__submit {
         background: black;
@@ -23,5 +28,7 @@ input {
     &:not(:last-child) {
         margin-bottom: 20px;
     }
+
+
 
 }

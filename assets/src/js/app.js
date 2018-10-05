@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const addUserUtility = (innerContent) => {
             const userName = document.createElement('li');
             userName.classList.add('user-container__utility');
+            const innerDiv = document.createElement('div');
+            innerDiv.classList.add('user-container__utility-inner');
             const userNameParagraph = document.createElement('p');
             userNameParagraph.textContent = innerContent;
-            userName.appendChild(userNameParagraph);
+            innerDiv.appendChild(userNameParagraph)
+            userName.appendChild(innerDiv);
             userList.appendChild(userName);
         };
 
