@@ -1,9 +1,31 @@
 .user-container {
+    $gutter: 10px;
+
+    flex-direction: row;
     background-color: $grey-light;
     border-radius: 3px;
     padding: 20px;
 
-    &__list {}
+    &__list {
+        list-style: none;
+        margin: -$gutter;
+    }
 
+    &__inner-list {
+        display: flex;
+    }
 
+    &__utility {
+        list-style: none;
+        border-radius: 3px;
+        flex-grow: 1;
+        padding: $gutter;
+        width: p(1, 3);
+
+        &:not(:last-child) {
+            margin-right: 10px;   
+        }
+
+    }
+    
 }
