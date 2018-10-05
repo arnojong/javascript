@@ -10,10 +10,7 @@ const   gulp = require('gulp'),
         babel = require('gulp-babel');
  
 gulp.task('styles', function () {
-    return gulp.src([
-        'assets/src/js/plugins/slider.js',
-        'assets/src/js/main.js'
-    ])
+    return gulp.src('./assets/src/scss/**/*.scss')
     .pipe(sass())
     .on('error', function (err) {
         console.log(err.toString());
@@ -33,8 +30,8 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
     return gulp.src([
         'assets/src/js/plugins/slider.js',
-        'assets/src/js/main.js'
-      ])
+        'assets/src/js/app.js'
+    ])
     .on('error', function (err) {
         console.log(err.toString());
         this.emit('end');
