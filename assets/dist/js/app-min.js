@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",function(d){console.log("DOM fully loaded and parsed")}),document.addEventListener("DOMContentLoaded",function(d){console.log("DOM fully loaded and parsed")});
+"use strict";document.addEventListener("DOMContentLoaded",function(e){console.log("DOM fully loaded and parsed")});

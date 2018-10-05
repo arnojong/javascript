@@ -1,0 +1,27 @@
+// Inputs
+input {
+    border-width: 0;
+    border-radius: 3px;
+    padding: 12px 22px;
+
+    &:not(:last-child) {
+        box-shadow: 3px 3px 5px 0px rgba($grey, 0.75);
+        margin-right: 5px;
+    }
+
+}
+
+// User form
+.user-form {
+    
+    &__submit {
+        background: black;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+}

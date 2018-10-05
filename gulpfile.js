@@ -10,7 +10,10 @@ const   gulp = require('gulp'),
         babel = require('gulp-babel');
  
 gulp.task('styles', function () {
-    return gulp.src('./assets/src/scss/**/*.scss')
+    return gulp.src([
+        'assets/src/js/plugins/slider.js',
+        'assets/src/js/main.js'
+    ])
     .pipe(sass())
     .on('error', function (err) {
         console.log(err.toString());
@@ -28,7 +31,10 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('./assets/src/js/**/*.js')
+    return gulp.src([
+        'assets/src/js/plugins/slider.js',
+        'assets/src/js/main.js'
+      ])
     .on('error', function (err) {
         console.log(err.toString());
         this.emit('end');
@@ -44,7 +50,9 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('./assets/dist/js'));
 });
 
-gulp.task('watch', function () {
+gulp.task('default', function() {
+    gulp.start(['styles', 'scripts']);
+
     gulp.watch('./assets/src/scss/**/*.scss', ['styles']);
     gulp.watch('./assets/src/js/**/*.js', ['scripts']);
 });
