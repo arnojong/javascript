@@ -40,6 +40,11 @@ form.addEventListener('submit', (e) => {
 
     const searchInput = document.querySelector('.car-search__type').value;
 
+    for (var i = 0; i < cars.length; i++){
+        if (cars[i].type == searchInput)
+    }
+
+
     if (searchInput === car.type) {
         alert('Is aanwezig');
     } else {
