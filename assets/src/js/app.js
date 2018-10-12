@@ -1,6 +1,8 @@
 const typeList = document.querySelector('.car-type__list');
+
 const form = document.querySelector('.car-search');
-const typeExist = false;
+const inputCarType = form.querySelector('.car-search__type');
+const availability = document.querySelector('.car-availability');
 
 const cars = [
     {
@@ -25,30 +27,43 @@ const cars = [
     }
 ];
 
-console.log(cars);
+// Empty car type array
+var carTypes = [];
 
 for (let car of cars) {
     const li = document.createElement('li');
+    carTypes.push(car.type)
+
     li.textContent = car.type;
-    
     typeList.appendChild(li);
 }
 
-form.addEventListener('submit', (e) => {
+// Validates the forms
+const formValidation = () => {
+    const inputCarTypeValue = inputCarType.value;
 
+    if (inputCarTypeValue == '') {
+        inputCarType.style.border = '1px solid red';
+        return false;
+    } else {
+        inputCarType.style.border = '1px solid black';
+
+        if (carTypes.includes(inputCarTypeValue)) {
+            availability.textContent = 'Hebben we';
+            availability.style.color = 'black';
+        } else {
+            availability.textContent = 'Hebben we niet';
+            availability.style.color = 'red';
+        }
+    
+    }
+
+};
+
+form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const searchInput = document.querySelector('.car-search__type').value;
+    formValidation();
 
-    for (var i = 0; i < cars.length; i++){
-        if (cars[i].type == searchInput)
-    }
-
-
-    if (searchInput === car.type) {
-        alert('Is aanwezig');
-    } else {
-        alert('Hebben we niet pik');
-    }
-
+    form.reset();
 });
